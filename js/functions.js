@@ -27,12 +27,12 @@ $(window).scroll(function(){
   }
 
 
-  // Promoscope
+  // ------------------------GOOGLE MAP FADE IN / FADE OUT ANIMATION---------------------------//
   if(wScroll > $('.large-window').offset().top - $(window).height()){
 
     $('.large-window').css({'background-position':'center '+ (wScroll - $('.large-window').offset().top) +'px'});
 
-    var opacity = (wScroll - $('.large-window').offset().top + 400) / (wScroll / 5);
+    var opacity = (wScroll - $('.large-window').offset().top + 700) / (wScroll / 5);
 
     $('.window-tint').css({'opacity': opacity});
 
@@ -41,15 +41,15 @@ $(window).scroll(function(){
 
   // Floating Elements
 
-  if(wScroll > $('.blog-posts').offset().top - $(window).height()){
+  // if(wScroll > $('.blog-posts').offset().top - $(window).height()){
 
-    var offset = (Math.min(0, wScroll - $('.blog-posts').offset().top +$(window).height() - 350)).toFixed();
+  //   var offset = (Math.min(0, wScroll - $('.blog-posts').offset().top +$(window).height() - 350)).toFixed();
 
-    $('.post-1').css({'transform': 'translate('+ offset +'px, '+ Math.abs(offset * 0.2) +'px)'});
+  //   $('.post-1').css({'transform': 'translate('+ offset +'px, '+ Math.abs(offset * 0.2) +'px)'});
 
-    $('.post-3').css({'transform': 'translate('+ Math.abs(offset) +'px, '+ Math.abs(offset * 0.2) +'px)'});
+  //   $('.post-3').css({'transform': 'translate('+ Math.abs(offset) +'px, '+ Math.abs(offset * 0.2) +'px)'});
 
-  }
+  // }
 });
 
 
@@ -313,3 +313,83 @@ jQuery(document).ready(function($) {
         };
     });
 });
+
+
+
+
+/*---------------------GOOGLE MAPS--------------------------------*/
+
+
+          // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+               
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 17,
+                    zoomControl: false,
+                    scaleControl: false,
+                    scrollwheel: false,
+                    disableDoubleClickZoom: true,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(-41.288467, 174.769062), // 21 Kelburn Parade
+
+                    // mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+                    // styling of map
+                    
+                    styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]};
+
+                // Get the HTML DOM element that will contain the map 
+                // Div with id="map" is used seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var icon = {url: "images/logo.svg", scaledSize: new google.maps.Size(40,40)};
+                    marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(-41.288467, 174.769062),
+                    map: map,
+                    icon: icon,
+                    title:"The Lab"
+                });
+
+                var content = '<div id="iw-container">' + '<strong>The Lab</strong><br>\
+                <b>Address:</b> Ground Level,<br> Easterfield Building<br>21 Kelburn Parade,<br> Kelburn, Wellington<br>\
+                <b>Telephone:</b> 04-475 8889 <br>\
+                <br><b>Opening Hours:</b><br>\
+                Monday - Friday: 9-5 pm <br>\
+                Food is prepared on a daily basis <br>\
+                <br>\
+                <p class="alignCenter">'+ '<a href class="button">' + ' view menu' + '</a>' + '</p>'
+                 + '</div>';
+                    infowindow = new google.maps.InfoWindow({
+                    content: content
+                });
+
+                google.maps.event.addListener(infowindow, 'domready', function() {
+                   var iwOuter = $('.gm-style-iw');
+                   var iwBackground = iwOuter.prev();
+                   iwBackground.children(':nth-child(2)').css({'display' : 'none'}); 
+                   iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+                   iwOuter.parent().parent().css({left: '165px', top: '60px'});
+                   iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'display:none !important;'}); //Tail
+                   iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'display:none !important;'}); //Tails-Shadow
+                   var iwCloseButton = iwOuter.next();
+                   iwCloseButton.css({opacity: '1', right:'5px', top: '8px', 'border-radius': '13px'});
+                   iwCloseButton.mouseout(function(){ $(this).css({opacity: '1'});});
+                    
+                });
+
+
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.open(map, marker);
+                });
+                infowindow.open(map, marker);
+            }
+
+

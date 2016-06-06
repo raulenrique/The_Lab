@@ -541,11 +541,11 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-size: 1.35em;
+  font-size: 1.8em;
   /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
-  font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-family:'Poiret One','Josefin Slab', 'Raleway','Open Sans',Helvetica, cursive, sans-serif;
   color: #222; }
 
 /* Typography
@@ -901,8 +901,8 @@ there.
 /* Larger than tablet */
 /* Larger than desktop */
 /* Larger than Desktop HD */
-body {
-  font-family: "Open Sans", sans-serif; }
+/*body {
+  font-family: "Open Sans", sans-serif; }*/
 
 h1,h2,h3,h4,h5,h6 {
   color: #ccc;
@@ -926,16 +926,12 @@ figure {
   transition: all 0.6s;
   opacity: 0;
   top: -100px;
-  font-family: "Gotham-Light", sans-serif;
+  font-family: "Poiret One", sans-serif;
 }
 
 .open-nav {
   max-height: 400px !important;
 }
-/*.open-nav .mobile-toggle {
-  transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-}*/
 
 .sticky {
   background-color: rgba(255, 255, 255, 0.93);
@@ -1701,7 +1697,7 @@ content: "\f107";
 .content {
   position: relative;
   background: white;
-  margin-bottom: 430px;
+  margin-bottom: 445px;
   overflow: hidden; }
 
   .content article {
@@ -1766,7 +1762,7 @@ img {
     position: absolute;
     bottom: 90px;
     left: -100%;
-    background: black;
+    background: #333;
     color: white;
     padding: 2px 8px;
     font-size: 11px;
@@ -1774,28 +1770,19 @@ img {
    border-radius: 5px;
     }
 
+#map {
+  height: 500px;
+}
+
 .large-window {
-  height: 640px;
-  background-image: url(../images/ingredients.jpg);
-  background-position: center 0px;
-  background-repeat: repeat-y;
-  background-attachment: fixed;
-  margin-top: 40px;
-  border-radius: 50%;
-  position: relative; }
+  height: 500px;
+  position: relative;}
 
   .large-window .window-tint {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0; }
+    bottom: 0;}
 
   .large-window .promo-text {
     color: white;
@@ -1847,24 +1834,97 @@ img {
     text-align: center;
   }
 
+/*GOOGLE MAPS STYLING*/
+.gm-style-iw {
+   width: 250px !important;
+   height: 300px !important;
+   top: 0px !important;
+   left: 0px !important;
+   padding: 5%;
+   background-color: rgba(51,51,51, 0.9);
+   color: white;
+   content: "";
+   text-align: left;
+   font-family:'Poiret One';
+   box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+   border-radius: 2px 2px 0 0;
+}
+
+
+.gm-style-iw strong {
+  font-family: 'Baron-Bold', 'Josefin Slab';
+  font-size: 25px;
+}
+
+.gm-style-iw b {
+  font-family: 'Baron-Bold', 'Josefin Slab';
+  font-size: 13px;
+}
+
+.gm-style-iw .button {
+  color: #333;
+  background-color: white;
+  font-family: 'Baron-Bold', sans-serif;
+  height: 28px;
+  padding: 0px 30px;
+  line-height: 28px;
+}
+
+.gm-style-iw p {
+vertical-align: middle;
+}
+
+
+/*Social Feed*/
+
+.juicer-feed.image-grid .j-text .j-message p:last-of-type, .juicer-feed.image-grid .j-text .j-edit p:last-of-type, .juicer-feed.slider .j-text .j-message p:last-of-type, .juicer-feed.slider .j-text .j-edit p:last-of-type, .juicer-feed.hip .j-text .j-message p:last-of-type, .juicer-feed.hip .j-text .j-edit p:last-of-type {
+    margin: 0;
+    font-size: smaller;
+    color: white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: left;
+    align-content: justify;
+}
+
+.juicerfeed {
+  letter-spacing: 2px;
+}
+
+ul.juicer-feed img {
+  min-height: 214px;
+  max-height: 214px !important;
+}
+
+.juicer-feed .j-meta a:hover, .juicer-feed a:hover {
+    color: #F9A03F;
+}
+
+.juicer-feed .j-meta a {
+ color: #92AB50;
+}
+
 
 footer .columns.three {
   width: 50%;
 }
 
 footer{
-  background: black;
+  background: #333;
   color: white;
-  padding: 40px;
+  padding: 40px 40px 10px 40px;
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: -1; }
+  z-index: -1;
+  font-size: 0.8em; }
+
   footer .footer-stuff {
     max-width: 640px;
     margin: 0 auto; }
+
   footer a {
     color: white; }
+
   footer input {
     color: #666; }
     
