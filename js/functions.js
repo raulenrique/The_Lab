@@ -363,7 +363,7 @@ jQuery(document).ready(function($) {
                 <b>Telephone:</b> 04-475 8889 <br>\
                 <br><b>Opening Hours:</b><br>\
                 Monday - Friday: 9-5 pm <br>\
-                Food is prepared on a daily basis <br>\
+                Our food is prepared fresh daily! :) <br>\
                 <br>\
                 <p class="alignCenter">'+ '<a href class="button">' + ' view menu' + '</a>' + '</p>'
                  + '</div>';
@@ -376,7 +376,7 @@ jQuery(document).ready(function($) {
                    var iwBackground = iwOuter.prev();
                    iwBackground.children(':nth-child(2)').css({'display' : 'none'}); 
                    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
-                   iwOuter.parent().parent().css({left: '165px', top: '60px'});
+                   iwOuter.parent().parent().css({left: '165px', top: '10px'});
                    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'display:none !important;'}); //Tail
                    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'display:none !important;'}); //Tails-Shadow
                    var iwCloseButton = iwOuter.next();

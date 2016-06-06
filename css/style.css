@@ -1289,8 +1289,9 @@ padding-left: 2%;
 
 .info_left, .info_right {
   
-  font-family: 'Gotham-Light', sans-serif;
+  font-family: 'Poiret One', sans-serif;
   font-size: 9.5px;
+  letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
   color: white;
@@ -1883,7 +1884,7 @@ vertical-align: middle;
     color: white;
     font-family: 'Poiret One', sans-serif;
     text-align: left;
-    align-content: justify;
+    cursor: pointer;
 }
 
 .juicerfeed {
@@ -1893,6 +1894,24 @@ vertical-align: middle;
 ul.juicer-feed img {
   min-height: 214px;
   max-height: 214px !important;
+
+}
+
+
+@media only screen and (max-width: 480px){
+ul.juicer-feed img {
+  min-height: 350px !important;
+  max-height: 350px !important;
+  margin-bottom: 20px;
+}
+
+}
+
+@media only screen and (max-width: 679px){
+/*div.j-stack.galcolumn {
+  padding-right: 10px;
+}*/
+
 }
 
 .juicer-feed .j-meta a:hover, .juicer-feed a:hover {
@@ -1903,10 +1922,27 @@ ul.juicer-feed img {
  color: #92AB50;
 }
 
+.post-overlay.juicer-feed a.juicer-button, .juicer-feed .j-paginate {
+  border-radius: 8px;
+  border-color: #F9A03F;
+  color: #F9A03F;
+  font-family: 'Baron-Bold', 'Poiret One';
+  text-transform: lowercase;
+  }
 
-footer .columns.three {
-  width: 50%;
+.post-overlay.juicer-feed a.juicer-button:hover,.juicer-feed .j-paginate:hover {
+  background-color: #F9A03F;
+  color: white;
+  font-family: 'Baron-Bold', 'Poiret One';
+  text-transform: lowercase;
 }
+
+.j-poster h3, .j-poster .j-date {
+  overflow: visible;
+}
+
+
+/*FOOTER*/
 
 footer{
   background: #333;
@@ -1931,12 +1967,16 @@ footer{
 
 @media only screen and (min-width: 550px) {
 
-  footer .columns.three {
+  footer .columns.twelve {
   width: initial;
   }
 
   footer {
-  padding: 40px 0;
+  padding: 10px 0;
   }
   
+  footer ul li {
+    display: inline-block;
+  }
+
 }
