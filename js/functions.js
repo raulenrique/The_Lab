@@ -82,15 +82,17 @@ $('navheader li a').click(function() {
 });
 
 // Navigation Scroll - ljepo radi materem
-$('nav a').click(function(event) {
-    var id = $(this).attr("href");
-    var offset = 70;
-    var target = $(id).offset().top - offset;
-    $('html, body').animate({
-        scrollTop: target
-    }, 500);
-    event.preventDefault();
-});
+// $('nav a').click(function(event) {
+//     var id = $(this).attr("href");
+//     var offset = 70;
+//     var target = $(id).offset().top - offset;
+//     $('html, body').animate({
+//         scrollTop: target
+//     }, 500);
+//     event.preventDefault();
+// });
+
+
 
 
 // ----------------------SMOOTH SCROLLING------------//
