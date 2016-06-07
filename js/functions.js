@@ -57,8 +57,9 @@ $(window).scroll(function(){
 // ------------------------NAV BAR---------------------------//
 // Sticky Header
 $(window).scroll(function() {
+    var scrollToElement = $('.content').offset().top
 
-    if ($(window).scrollTop() > 300) {
+    if ($(window).scrollTop() >= scrollToElement) {
         $('.navheader').addClass('sticky');
     } else {
         $('.navheader').removeClass('sticky');
