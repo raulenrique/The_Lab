@@ -54,17 +54,37 @@ $(window).scroll(function(){
 
 
 
-// ------------------------NAV BAR---------------------------//
+// ------------------------NAV BAR -INDEX PAGE---------------------------//
 // Sticky Header
 $(window).scroll(function() {
-    var scrollToElement = $('.content').offset().top
 
-    if ($(window).scrollTop() >= scrollToElement) {
-        $('.navheader').addClass('sticky');
+    if ($(window).scrollTop() > 300) {
+        $('.homenav').addClass('sticky');
     } else {
-        $('.navheader').removeClass('sticky');
+        $('.homenav').removeClass('sticky');
     }
 });
+
+// Mobile Navigation
+$('.mobile-toggle').click(function() {
+    if ($('.homenav').hasClass('open-nav')) {
+        $('.homenav').removeClass('open-nav');
+    } else {
+        $('.homenav').addClass('open-nav');
+    }
+});
+
+$('navheader li a').click(function() {
+    if ($('.homenav').hasClass('open-nav')) {
+        $('.navigation').removeClass('open-nav');
+        $('.homenav').removeClass('open-nav');
+    }
+});
+
+// ------------------------NAV BAR CONTENT PAGES---------------------------//
+// Sticky Header
+
+        $('.navheader').addClass('sticky');
 
 // Mobile Navigation
 $('.mobile-toggle').click(function() {
