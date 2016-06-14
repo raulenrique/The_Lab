@@ -18,7 +18,7 @@ include "headerhome.php";
           </div>
           </div>
             <div class="home-content-inner">
-                <div class="brandLogo"><img id="logo" src="images/logo.svg" alt="Brand-Logo"></div>
+                <div class="brandLogo"><img id="logo" src="images/svg/logo.svg" alt="Brand-Logo"></div>
                     <h1 class="brandAnimation-title letters rotate-2 h1">
                           <span class="brandAnimation-words-wrapper">
                               <b class="is-visible"> The Lab</b>
@@ -68,7 +68,7 @@ include "headerhome.php";
         <hr>
 
         <div class="columns twelve">
-          <ul class="juicer-feed" data-feed-id="thelabvictoria" data-per='6' data-pages="2" data-truncate="150" data-columns="3" data-gutter="20"><h1 class="referral"></h1></ul>
+          <ul class="juicer-feed" data-feed-id="thelabvictoria" data-per='6' data-pages="2"  data-truncate="150" data-columns="3" data-gutter="20"><h1 class="referral"></h1></ul>
         </div>
 
 

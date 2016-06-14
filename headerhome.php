@@ -30,7 +30,7 @@
                 <ul>
                     <li><a href="menu.php">Our Creations</a></li>
                     <li><a href="about.php">About Us</a></li>
-                    <li class="brandli"><div class="brandlogo"><a href="index.php"><img src="images/logo.svg" alt="brand-logo"></a>
+                    <li class="brandli"><div class="brandlogo"><a href="index.php"><img src="images/svg/logo-nav.svg" alt="brand-logo"></a>
         </div></li>
                     <li><a href="jobs.php">Join The Team</a></li>
                     <li><a href="contact.php">Get in Touch</a></li>

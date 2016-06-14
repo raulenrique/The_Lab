@@ -103,6 +103,8 @@ max-height: 48px;
 nav ul {
   padding-top: 0px;
   margin-left: 10px;
+  max-height: 48px !important;
+  margin-bottom: 0;
 }
 
 nav ul li {
@@ -998,66 +1000,37 @@ vertical-align: middle;
 
 }
 
+@media screen and (max-width: 480px) {
+
+.juicer-feed.white li.feed-item {
+ max-height: 100%;
+
+}
+
+
+}
+
 .juicer-feed .j-loading, .juicer-feed .j-paginate {
-    margin: 0px auto 50px auto;
-}
-
-
-/*
-.juicer-feed.image-grid .j-text .j-message p:last-of-type, .juicer-feed.image-grid .j-text .j-edit p:last-of-type, .juicer-feed.slider .j-text .j-message p:last-of-type, .juicer-feed.slider .j-text .j-edit p:last-of-type, .juicer-feed.hip .j-text .j-message p:last-of-type, .juicer-feed.hip .j-text .j-edit p:last-of-type {
-    margin: 0;
-    font-size: smaller;
-    color: white;
-    font-family: 'Poiret One', sans-serif;
-    text-align: left;
-    cursor: pointer;
-}
-
-.juicerfeed {
-  letter-spacing: 2px;
-}
-*/
-
-/*@media only screen and (max-width: 480px){
-ul.juicer-feed img {
-  min-height: 350px !important;
-  max-height: 350px !important;
-  margin-bottom: 20px;
-}
-
-}
-
-@media only screen and (max-width: 679px){
-
-}
-
-.juicer-feed .j-meta a:hover, .juicer-feed a:hover {
+    margin: 50px auto 50px auto;
+    border-color: #F9A03F;
     color: #F9A03F;
+    text-transform: lowercase;
+    font-family: 'Baron-Bold', 'Poiret One';
 }
 
 .juicer-feed .j-meta a {
  color: #92AB50;
 }
 
-.post-overlay.juicer-feed a.juicer-button, .juicer-feed .j-paginate {
-  border-radius: 8px;
-  border-color: #F9A03F;
-  color: #F9A03F;
-  font-family: 'Baron-Bold', 'Poiret One';
-  text-transform: lowercase;
-  }
-
 .post-overlay.juicer-feed a.juicer-button:hover,.juicer-feed .j-paginate:hover {
   background-color: #F9A03F;
   color: white;
-  font-family: 'Baron-Bold', 'Poiret One';
-  text-transform: lowercase;
 }
 
-.j-poster h3, .j-poster .j-date {
-  overflow: visible;
+.juicer-feed .j-meta a:hover, .juicer-feed a:hover {
+    color: #F9A03F;
 }
-*/
+
 
 /*FOOTER*/
 
@@ -1069,7 +1042,10 @@ footer{
   bottom: 0;
   width: 100%;
   z-index: -1;
-  font-size: 0.8em; }
+  font-size: 0.8em; 
+}
+
+
 
   footer .footer-stuff {
     max-width: 640px;
@@ -1080,12 +1056,17 @@ footer{
 
   footer input {
     color: #666; }
+
+    footer p {
+      line-height: 23.5px;
+      font-size: 14.5px;
+    }
     
 
 @media only screen and (min-width: 550px) {
 
   footer .columns.twelve {
-  width: initial;
+  width: 100%;
   }
 
   footer {
