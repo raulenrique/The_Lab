@@ -1,3 +1,55 @@
+ // ---------------------------SUBSCRIPTION POP-UP-------------------------------//
+
+//Loading events as soon as doc is ready
+//FORM VALIDATION
+//hiding errors labels when page loads
+   $(function() {
+    $('.error').hide();
+    $(".button-primary").click(function() {
+      // validate and process form here
+      
+      $('.error').hide();
+      var name = $("input#name").val();
+        if (name == "") {
+        $("label#name_error").show();
+        $("input#name").focus();
+        return false;
+      }
+        var email = $("input#email").val();
+        if (email == "") {
+        $("label#email_error").show();
+        $("input#email").focus();
+        return false;
+      }
+
+        var dataString = 'name='+ name + '&email=' + email;
+      // alert (dataString);return false;
+      $.ajax({
+        type: "POST",
+        url: "footer.php",
+        data: dataString,
+        success: function() {
+          $('#subscription-form').html("<div class='message'></div>");
+          $('.message').html("<h2>Subscription Added!</h2>")
+          .append("<p>We will be in touch soon. Enjoy your day - <em>The Lab Team</em></p>")
+          .hide()
+          .fadeIn(1500, function() {
+            $('.message').append("<button id='exit'><img src='images/exit.png' alt='close message box button'/></button>");
+          });
+        }
+      });
+      return false;
+    });
+  });
+
+$( '#exit' ).click( function () {
+    
+    $( 'footer' ).removeClass('.message');
+     // $( 'footer' ).html( "<div id='subscription-form'></div>" );
+    
+});     
+
+
 // -----------------------------CONTACT PAGE-------------------------------------//
 
 
