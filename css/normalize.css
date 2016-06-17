@@ -386,14 +386,7 @@ td,
 th {
   padding: 0; }
 
-/*
-* Skeleton V2.0.4
-* Copyright 2014, Dave Gamache
-* www.getskeleton.com
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 12/29/2014
-*/
+
 /* Table of contents
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 - Grid
@@ -775,7 +768,16 @@ fieldset {
 
 input[type="checkbox"],
 input[type="radio"] {
-  display: inline; }
+  display: inline;
+  width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    overflow: hidden; 
+  }
 
 label > .label-body {
   display: inline-block;

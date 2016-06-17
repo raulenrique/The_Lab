@@ -29,23 +29,29 @@
         url: "footer.php",
         data: dataString,
         success: function() {
-          $('#subscription-form').html("<div class='message'></div>");
-          $('.message').html("<h2>Subscription Added!</h2>")
+          $('#subscription-form').html("<div class='popup_message'></div>");
+          $('.popup_message').html("<h2>Subscription Added!</h2>")
           .append("<p>We will be in touch soon. Enjoy your day - <em>The Lab Team</em></p>")
           .hide()
           .fadeIn(1500, function() {
-            $('.message').append("<button id='exit'><img src='images/exit.png' alt='close message box button'/></button>");
+            $('.popup_message').append("<button id='exit'><img src='images/exit.png' alt='close message box button'/></button>");
           });
         }
       });
-      return false;
+      // return false;
+      $('#exit').click(function() {
+    console.log("yese");
+    $( 'footer' ).removeClass('.message');
+     $( 'footer' ).html( "<div id='subscription-form'></div>" );
+    
+});   
     });
   });
 
-$( '#exit' ).click( function () {
-    
+$('#exit').click(function() {
+    console.log("yese");
     $( 'footer' ).removeClass('.message');
-     // $( 'footer' ).html( "<div id='subscription-form'></div>" );
+     $( 'footer' ).html( "<div id='subscription-form'></div>" );
     
 });     
 
@@ -104,6 +110,7 @@ $('form').submit(function() {
   });
   
   if (!formError) {
+    
     $('body').addClass('form-submitted');
     $('#form-head').addClass('form-submitted'); 
     setTimeout(function(){
@@ -212,17 +219,6 @@ $('navheader li a').click(function() {
         $('.navheader').removeClass('open-nav');
     }
 });
-
-// Navigation Scroll - ljepo radi materem
-// $('nav a').click(function(event) {
-//     var id = $(this).attr("href");
-//     var offset = 70;
-//     var target = $(id).offset().top - offset;
-//     $('html, body').animate({
-//         scrollTop: target
-//     }, 500);
-//     event.preventDefault();
-// });
 
 
 

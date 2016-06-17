@@ -12,20 +12,21 @@ include "header.php";
     <div id='form-head'>
       <h1 class='pre'>Get in touch</h1>
       <h1 class='post'>Thanks!</h1>
-      <p class='post'>I'll be in touch ASAP</p>
+      <p class='post' id="status"></p>
     </div>
-    <form id="contact-form">
-      <input class='input name' name='user' placeholder="What's your name" type='text'>
-      <input class='input email' name='email' placeholder='E-mail address of your choice' type='text'>
-      <select class='input select' name='subject'>
+    <form id="contact-form" class="expand">
+     <input type="hidden" name="q" id="q">
+      <input class='input name' id="user_name" name='user' placeholder="What's your name" type='text'>
+      <input class='input email' id="user_email" name='email' placeholder='E-mail address of your choice' type='text'>
+      <select class='input select' name='subject' id="subject">
         <option disabled='' selected="">What can we help you with?</option>
-        <option>I'd like to know about catering options available</option>
-        <option>I'd like to know more about the nutritional profile / ingredients you use</option>
-        <option>I'd like to enquire about your business for investment purposes</option>
-        <option>I'd like to gather some media related info from you guys</option>
+        <option>available catering options</option>
+        <option>nutritional profile / ingredients we use</option>
+        <option>business and investment enquiry</option>
+        <option>media related info from us</option>
       </select>
-      <textarea class='input message' placeholder='Let us know how we can help.'></textarea>
-      <input class='input submit' type='submit' value='Send Message'>
+      <textarea class='input message' id="message" placeholder='Let us know how we can help.'></textarea>
+      <input class='input submit' type='submit' value='Send Message' name="submitButton" onclick="javascript:ajax_post();">
     </form>
   </div>
 </div>

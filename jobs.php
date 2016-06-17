@@ -14,7 +14,7 @@ include "header.php";
     <div id='form-head'>
       <h1 class='pre'>Have what it takes?</h1>
       <h1 class='post'>Thanks !</h1>
-      <p class='post'>We'll be in touch with you soon. <br> Look forward to having you on the team!</p>
+      <p class='post' id="status"></p>
     </div>
       
      
@@ -23,21 +23,22 @@ include "header.php";
       <input class='input email' id="user_email" name='user_email' placeholder='E-mail address of your choice' type='text'>
       <input class='input mobile_number' id=" mobile_number" name=' mobile_number' placeholder='Your cell number so we can give you a text or call' type='text'>
       <input class='input social_media' id=" social_media" name=' social_media' placeholder='Enter your username to one of your social media sites' type='text'>
-      <p  id="socialchannels" class="social-channel">Which account is this for? (Please select from one of the boxes below)</p>
-      <label><input  id="social_Facebook" class="input social_channel" name="Facebook" type="checkbox" >Facebok</label><br>
-      <label><input  id="social_LinkedIn" class="input social_channel" name="LinkedIn" type="checkbox" >LinkedIn</label><br>
-      <label><input  id="social_Instagram" class="input social_channel" name="Instagram" type="checkbox" >Instagram</label><br>
-      <label><input  id="social_Twitter" class="input social_channel" name="Twitter" type="checkbox" >Twitter</label><br>
-      <select class='input role' id="work-role" name='work-role'>
+      <p  id="socialchannels" class="social-channel">Which account is this for? (Please select from one of the boxes below)</p><br>
+      <label><input  id="social_facebook" class="input social_channel" name="Facebook" type="checkbox" >Facebok</label><br>
+      <label><input  id="social_linkedIn" class="input social_channel" name="LinkedIn" type="checkbox" >LinkedIn</label><br>
+      <label><input  id="social_instagram" class="input social_channel" name="Instagram" type="checkbox" >Instagram</label><br>
+      <label><input  id="social_twitter" class="input social_channel" name="Twitter" type="checkbox" >Twitter</label><br>
+      <select class='input role' id="work_role" name='work_role'>
         <option disabled='' selected>What role are you after?</option>
         <option>Kitchen Staff</option>
         <option>Front of House / Barista</option>
         <option>Manager</option>
       </select>
+      <p  id="hours" class="social-channel">What hours are you looking for? (Please select from one of the boxes below)</p><br>
       <label><input  id="part_time" class="input time" name="part_time" type="checkbox" >Part-Time</label><br>
       <label><input  id="full_time" class="input time" name="full_time" type="checkbox" >Full Time</label><br>
-      <input class="file" type="file" name="profile-pic" accept="image/*">
-      <input class="file" type="file" name="resume" accept="media_type">
+      <input class="file" type="file" name="profile-pic" id="profile_pic" accept="image/*">
+      <input class="file" type="file" id="resume" name="resume" accept="media_type">
       <textarea class='input message' id= "message" name="message" placeholder="In 200 hundred characters or less , tell us what makes you stand out?" maxlength="200"></textarea>
       <input class='input submit' type='submit' value='Apply!' name="submitButton" onClick="javascript:ajax_post();">
       <br><br> 
